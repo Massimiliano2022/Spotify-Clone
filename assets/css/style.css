@@ -15,19 +15,22 @@ hr{
 /*#left-nav{
     width: 20%;
 }*/
-nav{
+/* nav{
     height:30vh;
+} */
+#left-nav{
+    height:80%;
 }
-#left-nav-playlists{
-    height:60vh;
+.container-fluid{
+    height: 100vh;
 }
 /* NAV LEFT */
 
 /* CONTENUTO PRINCIPALE */
 
 #contenuto-principale{
-    height:90vh;
     background:yellow;
+    /* height:90vh; */
 }
 
 /* CONTENUTO PRINCIPALE */
