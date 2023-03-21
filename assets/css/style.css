@@ -2,6 +2,50 @@ a{
     text-decoration: none;
     color: white;
 }
-/*svg{
+svg{
     fill: white;
-}*/
+}
+#svgCuore{
+    fill: #191919;
+}
+#svgCuore:hover{
+    fill: #fff;
+}
+#playSvgFooter{
+    fill: #ffffffc7;
+}
+#playSvgFooter:hover{
+    fill: #fff;
+}
+#play{
+    vertical-align: 20%;
+}
+#containerPlay{
+    border: none;
+    height: 35px;
+    width: 35px;
+    background-color: #fff;
+    border-radius: 100%;
+    position: relative;
+}
+#containerPlay svg{
+    position: absolute;
+    bottom: 7px;
+    right: 7px;
+    fill: black;
+}
+#playFooter{
+    vertical-align: middle;
+}
+#seek-slider{
+    vertical-align: 20%;
+    border-radius: 0px;
+    height: 2px;
+    width: 500px;
+}
+#seek-slider2{
+    vertical-align: 15%;
+    border-radius: 0px;
+    height: 2px;
+    width: 70px;
+}
