@@ -49,3 +49,15 @@ svg{
     height: 2px;
     width: 70px;
 }
+.ancoraNavMain{
+    padding: 4px;
+    border-radius: 100%;
+}
+.ancoraNavMain:hover{
+    background-color: #191919;
+    padding: 4px;
+    border-radius: 100%;
+}
+#profiloMainNav:hover{
+    background-color: #191919;
+}
