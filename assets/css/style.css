@@ -61,3 +61,23 @@ svg{
 #profiloMainNav:hover{
     background-color: #191919;
 }
+#PlayMain{
+    border: none;
+    height: 35px;
+    width: 35px;
+    background-color: rgb(71, 236, 71);
+    border-radius: 100%;
+    position: relative;
+}
+#PlayMain svg{
+    position: absolute;
+    bottom: 7px;
+    right: 7px;
+    fill: black;
+}
+.titleMain{
+    font-size: 0.9em;
+}
+.paragraphMain{
+    font-size: 0.5em;
+}
