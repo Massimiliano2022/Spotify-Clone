@@ -1,26 +1,7 @@
-/* NAV LEFT */
 a{
     text-decoration: none;
     color: white;
 }
-
 svg{
     fill: white;
-}
-
-hr{
-    border: 1px solid white;
-}
-
-/* CONTENUTO PRINCIPALE */
-
-#contenuto-principale{
-    background:yellow;
-    /* height:90vh; */
-}
-
-/* CONTENUTO PRINCIPALE */
-
-#div1{
-    height: 100%;
 }
