@@ -10,9 +10,21 @@
 #playSvgFooter:hover{
     fill: #fff;
 }
+#play{
+    vertical-align: 20%;
+}
 #containerPlay{
+    border: none;
+    height: 35px;
+    width: 35px;
     background-color: #fff;
     border-radius: 100%;
+    position: relative;
+}
+#containerPlay svg{
+    position: absolute;
+    bottom: 7px;
+    right: 7px;
 }
 #playFooter{
     vertical-align: middle;
@@ -23,3 +35,16 @@
     height: 2px;
     width: 500px;
 }
+#seek-slider2{
+    vertical-align: 15%;
+    border-radius: 0px;
+    height: 2px;
+    width: 70px;
+}
+/* #seek-slider:hover{
+    vertical-align: 20%;
+    background-color: green;
+    border-radius: 0px;
+    height: 2px;
+    width: 500px;
+} */
