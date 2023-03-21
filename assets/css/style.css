@@ -1,0 +1,25 @@
+#svgCuore{
+    fill: #191919;
+}
+#svgCuore:hover{
+    fill: #fff;
+}
+#playSvgFooter{
+    fill: #ffffffc7;
+}
+#playSvgFooter:hover{
+    fill: #fff;
+}
+#containerPlay{
+    background-color: #fff;
+    border-radius: 100%;
+}
+#playFooter{
+    vertical-align: middle;
+}
+#seek-slider{
+    vertical-align: 20%;
+    border-radius: 0px;
+    height: 2px;
+    width: 500px;
+}
