@@ -84,6 +84,11 @@ svg{
 #containerMain2{
     height: calc(100vh - 216px - 54px)
 }
+#containerMainHome{
+    height:60vh;
+    margin-bottom: 91.9px;
+
+}
 ::-webkit-scrollbar{
     background-color: #212529;
 }
