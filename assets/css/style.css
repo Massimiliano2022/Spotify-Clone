@@ -84,3 +84,7 @@ svg{
 ::-webkit-scrollbar{
     background-color: #212529;
 }
+
+main{
+    background-image: url('../imgs/profile/pinguini-sfondo.jpg');
+}
