@@ -81,6 +81,17 @@ svg{
 .paragraphMain{
     font-size: 0.5em;
 }
+#containerMain2{
+    height: calc(100vh - 475px - 54px)
+}
 ::-webkit-scrollbar{
     background-color: #212529;
+}
+
+/* media query */
+
+@media screen and (max-width: 425px){ 
+    #ImgResponsive{
+        width: 350px;
+    }
 }
