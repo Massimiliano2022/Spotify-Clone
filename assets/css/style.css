@@ -85,9 +85,8 @@ svg{
     height: calc(100vh - 216px - 54px)
 }
 #containerMainHome{
-    height:60vh;
+    /*height:70vh;*/
     margin-bottom: 91.9px;
-
 }
 ::-webkit-scrollbar{
     background-color: #212529;
@@ -126,6 +125,9 @@ svg{
 @media screen and (max-width: 425px){ 
     #ImgResponsive{
         width: 350px;
+    }
+    #ImgResponsiveHome{
+        width:150px;
     }
     #containerMain2{
         height: calc(100vh - 475px - 54px)
