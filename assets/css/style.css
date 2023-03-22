@@ -89,6 +89,29 @@ svg{
 }
 
 /* media query */
+@media screen and (max-width: 1024px){
+    #seek-slider{
+        vertical-align: 20%;
+        border-radius: 0px;
+        height: 2px;
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 900px){
+    #seek-slider{
+        vertical-align: 20%;
+        border-radius: 0px;
+        height: 2px;
+        width: 200px;
+    }
+    #seek-slider2{
+        vertical-align: 15%;
+        border-radius: 0px;
+        height: 2px;
+        width: 50px;
+    }
+}
 
 @media screen and (max-width: 425px){ 
     #ImgResponsive{
@@ -96,5 +119,14 @@ svg{
     }
     #containerMain2{
         height: calc(100vh - 475px - 54px)
+    }
+    .playFooterLeft{
+        display: none;
+    }
+    #seek-slider{
+        vertical-align: 20%;
+        border-radius: 0px;
+        height: 2px;
+        width: 100px;
     }
 }
