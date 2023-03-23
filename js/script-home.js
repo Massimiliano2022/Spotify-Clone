@@ -1,10 +1,14 @@
-const KEY = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=pink-floyd';
+const KEY_HEADER = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=pink-floyd';
+const KEY_CARD_SMALL = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=miles-davis';
+const KEY_CARD_MEDIUM = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=mina';
 
-let objectAlbums={};
-
+let objectAlbums = {};
+let arrayAlbumSmall = [];
 
 window.onload = async () => {
-    creaCardHeader(KEY);
+    creaCardHeader(KEY_HEADER);
+    creaCardSmall(KEY_CARD_SMALL);
+    creaCardMedium(KEY_CARD_MEDIUM);
 }
 
 async function creaCardHeader(params) {
@@ -17,14 +21,12 @@ async function creaCardHeader(params) {
 
         console.log(albums);
 
-        objectAlbums={ ...albums };
+        objectAlbums = { ...albums };
 
-        let numRandom=Math.floor(Math.random() * 24);
+        let numRandom = Math.floor(Math.random() * 24);
 
         let album = objectAlbums.data[numRandom];
 
-        console.log(album);
-        
         assegnaHeader(album);
     } catch (error) {
         console.log(error);
@@ -36,8 +38,7 @@ function assegnaHeader(params) {
     cardDiv.innerHTML = "";
     cardDiv.innerHTML = `
     <div class="mb-3 d-flex justify-content-center">
-        <img class="justify-content-sm-center rounded-1 imgResponsiveHome"
-        width="200px" src="${params.album.cover_medium}" alt="${params.album.title}">
+        <img class="justify-content-sm-center rounded-1 imgResponsiveHome" src="${params.album.cover_medium}" alt="${params.album.title}">
     </div>
     <div class="mt-sm-0 ms-2 ms-md-3 mt-md-5 d-flex flex-column">
         <div>
@@ -60,60 +61,64 @@ function assegnaHeader(params) {
     </div>
     `;
 }
-/*async function creaCardSmall1(params) {
+
+async function creaCardSmall(params) {
 
     try {
         const response = await fetch(params, {
         });
 
-        const album = await response.json();
+        const albums = await response.json();
 
-        assegnaCardSmall1(album);
+        console.log(albums);
 
-    } catch (error) {
-        console.log(error);
-    }
-}
-function assegnaCardSmall1(album) {
-    let cardDiv = document.getElementById("cardSmall1");
-    cardDiv.innerHTML = "";
-    cardDiv.innerHTML = `
-    <div class="col-md-4">
-        <img src="${album.cover_medium}" class="img-fluid rounded-start" alt="${album.title}">
-    </div>
-    <div class="col-md-8" style="background: #2C2C2C;">
-        <div class="card-body text-white">
-            <h5 class="card-title fs-6 text-truncate">${album.title}</h5>
-        </div>
-    </div>
-    `;
-}*/
-/*async function creaCardSmall2(params) {
+        objectAlbums = { ...albums };
 
-    try {
-        const response = await fetch(params, {
-        });
+        for (i = 0; i < 6; i++) {
 
-        const album = await response.json();
+            let numRandom = Math.floor(Math.random() * 24);
 
-        assegnaCardSmall2(album);
+            let album = objectAlbums.data[numRandom];
+
+            arrayAlbumSmall.push(album);
+
+        }
+
+        assegnaCardSmall(arrayAlbumSmall);
 
     } catch (error) {
         console.log(error);
     }
+
+}
+function assegnaCardSmall(params) {
+
+    console.log(params);
+
+    let cardDiv = document.getElementById("cardSmall");
+
+    cardDiv.innerHTML = "";
+
+    params.forEach((param) => {
+
+        let card = document.createElement("div");
+        card.classList.add("col-4", "d-flex", "mb-2");
+
+        card.innerHTML = `
+        <div class="card mb-3 border-0">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="${param.album.cover}" class="img-fluid rounded-start" alt="${param.album.title}" width="200px">
+                </div>
+                <div class="col-md-8" style="background: #2C2C2C;">
+                    <div class="card-body text-white">
+                        <h5 class="card-title fs-6 text-truncate">${param.album.title}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+        cardDiv.appendChild(card);
+    });
 }
 
-function assegnaCardSmall2(album) {
-    let cardDiv = document.getElementById("cardSmall2");
-    cardDiv.innerHTML = "";
-    cardDiv.innerHTML = `
-    <div class="col-md-4">
-        <img src="${album.cover_medium}" class="img-fluid rounded-start" alt="${album.title}">
-    </div>
-    <div class="col-md-8" style="background: #2C2C2C;">
-        <div class="card-body text-white">
-            <h5 class="card-title fs-6 text-truncate">${album.title}</h5>
-        </div>
-    </div>
-    `;
-}*/
