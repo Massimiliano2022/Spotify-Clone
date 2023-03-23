@@ -114,7 +114,7 @@
             </div>
             <!-- main -->
             <div class="row row-cols-1 col-lg-7 p-0 m-0">
-                <main class="bg-dark h-100 overflow-auto">
+                <main class="bg-dark h-100 overflow-auto" data-bs-spy="srcoll" style="height: 100vh;">
                     <nav class="d-flex justify-content-between p-2">
                         <div class="ms-2 mt-1">
                             <a class="ancoraNavMain me-1" href="#"><svg id="navMainSvg"
@@ -177,7 +177,7 @@
                           </div>
                     </section>
                     <!--<section id="containerMainHome" class="pt-0 bg-dark overflow-auto" data-bs-spy="scroll" style="max-height:50vh">-->
-                    <section id="containerMainHome" class="pt-0 bg-dark">    
+                    <section id="containerMainHome" class="pt-0 bg-dark overflow-auto">    
                         <div class="container-fluid px-4">
                             <div class="d-flex p-2 bg-dark">
                                 <div class="ms-1">
@@ -213,8 +213,19 @@
                                 </div>
                             </div>
                             <div class="mt-sm-0 mt-5 pt-4">
+                                <div class="d-block d-md-none">
+                                    <p class="text-white">Brani che ti piacciono</p>
+                                    <div class="d-flex align-items-center">
+                                        <img class="img-fluid rounded-circle" src="assets/imgs/main/image-12.jpg"
+                                            alt="" width="80px">
+                                        <div class="ms-1">
+                                            <p class="text-white mb-1">Hai messo mi piace a 11 brani</p>
+                                            <p class="text-secondary">Di Yellowcard</p>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="row">
-                                    <div class="col-7">
+                                    <div class="col-md-7 col-sm-12">
                                         <p class="text-white">Popolari</p>
                                         <div class="row d-flex align-items-center my-4">
                                             <div class="col-6">
@@ -417,7 +428,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-md-5 d-none d-md-block">
                                         <p class="text-white">Brani che ti piacciono</p>
                                         <div class="d-flex align-items-center">
                                             <img class="img-fluid rounded-circle" src="assets/imgs/main/image-12.jpg"
