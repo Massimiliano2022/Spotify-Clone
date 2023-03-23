@@ -1,8 +1,9 @@
 const albumHeader = 'https://striveschool-api.herokuapp.com/api/deezer/album/366045987';
-
+const cardSmall1  =  'https://striveschool-api.herokuapp.com/api/deezer/album/309377597';
 
 window.onload = async () => {
     creaCardHeader(albumHeader);
+
 }
 
 async function creaCardHeader(params) {
