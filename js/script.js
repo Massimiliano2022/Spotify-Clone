@@ -1,34 +1,16 @@
-const albumHeader = 'https://striveschool-api.herokuapp.com/api/deezer/album/366045987';
+const KEY_HEADER = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=pink-floyd';
+const KEY_CARD_SMALL = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=miles-davis';
+const KEY_CARD_MEDIUM = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=a-tribe-called-quest';
 
-const cardMedium1 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=queen'
-const cardMedium2 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=lazza'
-const cardMedium3 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=ultimo'
-const cardMedium4 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=michaeljackson'
-const cardMedium5 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=ac/ds'
-const cardMedium6 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=oasis'
-const cardMedium7 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=blackeyedpeas'
-const cardMedium8 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=theweekend'
-const cardMedium9 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=badbunny'
-const cardMedium10 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=harrystyle'
-const cardMedium11 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=geolier'
-const cardMedium12 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=tananai'
-const cardMedium13 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=gue'
+let objectAlbums = {};
+let arrayAlbumSmall = [];
+let arrayAlbumMedium= [];
+
 
 window.onload = async () => {
-    creaCardHeader(albumHeader);
-    creaCardMain1(cardMedium1)
-    creaCardMain2(cardMedium2)
-    creaCardMain3(cardMedium3)
-    creaCardMain4(cardMedium4)
-    creaCardMain5(cardMedium5)
-    creaCardMain6(cardMedium6)
-    creaCardMain7(cardMedium7)
-    creaCardMain8(cardMedium8)
-    creaCardMain9(cardMedium9)
-    creaCardMain10(cardMedium10)
-    creaCardMain11()
-    creaCardMain12()
-    creaCardMain13()
+    creaCardHeader(KEY_HEADER);
+    creaCardSmall(KEY_CARD_SMALL);
+    creaCardMedium(KEY_CARD_MEDIUM);
 }
 
 async function creaCardHeader(params) {
@@ -37,37 +19,41 @@ async function creaCardHeader(params) {
         const response = await fetch(params, {
         });
 
-        const album = await response.json();
+        const albums = await response.json();
 
-        console.log(album);
+        console.log(albums);
+
+        objectAlbums = { ...albums };
+
+        let numRandom = Math.floor(Math.random() * 24);
+
+        let album = objectAlbums.data[numRandom];
 
         assegnaHeader(album);
     } catch (error) {
         console.log(error);
     }
 }
+function assegnaHeader(param) {
 
-function assegnaHeader(album) {
     let cardDiv = document.getElementById("cardHeader");
-    cardDiv.innerHTML=''
-
+    cardDiv.innerHTML = "";
     cardDiv.innerHTML = `
     <div class="mb-3 d-flex justify-content-center">
-        <img class="justify-content-sm-center rounded-1 imgResponsiveHome"
-        width="200px" src="${album.cover_medium}" alt="${album.title}">
+        <img class="justify-content-sm-center rounded-1 imgResponsiveHome" src="${param.album.cover_medium}" alt="${param.album.title}">
     </div>
     <div class="mt-sm-0 ms-2 ms-md-3 mt-md-5 d-flex flex-column">
         <div>
             <h1 class="fs-6 text-white">ALBUM</h1>
         </div>
         <div  class="mb-3 justify-content-sm-center">
-            <h1  class="fs-1 text-white">${album.title}</h1>
+            <h1  class="fs-1 text-white">${param.album.title}</h1>
         </div>
         <div>
             <a href="#">
-                <img class="rounded-5" width="10px" src="${album.artist.picture_medium}"
-                alt="${album.artist.name}">
-                <h1 class="fs-6 d-inline">${album.artist.name}</h1>
+                <img class="rounded-5" width="25px" src="${param.artist.picture_medium}"
+                alt="${param.artist.name}">
+                <h1 class="fs-6 d-inline">${param.artist.name}</h1>
             </a>
         </div>
         <div class="my-3">
@@ -76,8 +62,132 @@ function assegnaHeader(album) {
         </div>
     </div>
     `;
+    cardDiv.addEventListener("click", () => {
+        redirectToAlbumPage(param.album.id);
+    });
+}
+async function creaCardSmall(params) {
+
+    try {
+        const response = await fetch(params, {
+        });
+
+        const albums = await response.json();
+
+        console.log(albums);
+
+        objectAlbums = { ...albums };
+
+        for (i = 0; i < 6; i++) {
+
+            let numRandom = Math.floor(Math.random() * 24);
+
+            let album = objectAlbums.data[numRandom];
+
+            arrayAlbumSmall.push(album);
+
+        }
+
+        assegnaCardSmall(arrayAlbumSmall);
+
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+function assegnaCardSmall(params) {
+
+    console.log(params);
+
+    let cardDiv = document.getElementById("cardSmall");
+
+    cardDiv.innerHTML = "";
+
+    params.forEach((param) => {
+
+        let card = document.createElement("div");
+        card.classList.add("col-4", "d-flex", "mb-2");
+
+        card.innerHTML = `
+        <div class="card mb-3 border-0">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="${param.album.cover}" class="img-fluid rounded-start" alt="${param.album.title}" width="200px">
+                </div>
+                <div class="col-md-8" style="background: #2C2C2C;">
+                    <div class="card-body text-white">
+                        <h5 class="card-title fs-6 text-truncate">${param.album.title}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+
+        card.addEventListener("click", () => {
+            redirectToAlbumPage(param.album.id);
+        });
+
+        cardDiv.appendChild(card);
+    });
+}
+async function creaCardMedium(params) {
+
+    try {
+        const response = await fetch(params, {
+        });
+
+        const albums = await response.json();
+
+        console.log(albums);
+
+        objectAlbums = { ...albums };
+
+        for (i = 0; i < 12; i++) {
+
+            let numRandom = Math.floor(Math.random() * 24);
+
+            let album = objectAlbums.data[numRandom];
+
+            arrayAlbumMedium.push(album);
+
+        }
+
+        assegnaCardMedium(arrayAlbumMedium);
+
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+function assegnaCardMedium(params) {
+
+    console.log(params);
+
+    let cardDiv = document.getElementById("cardMedium");
+
+    cardDiv.innerHTML = "";
+
+    params.forEach((param) => {
+
+        let card = document.createElement("div");
+        card.classList.add("col-6", "col-md-3","d-flex", "mb-2");
+        card.innerHTML = `
+        <div class="card border-0">
+            <img src="${param.album.cover_big}" class="img-fluid rounded-start" alt="${param.album.title}" width="200px">
+            <div class="card-body text-white" style="background: #2C2C2C;">
+                <p class="card-text text-truncate">${param.album.title}</p>
+            </div>
+        </div>
+        `;
+
+        card.addEventListener("click", () => {
+            redirectToAlbumPage(param.album.id);
+        });
+
+        cardDiv.appendChild(card);
+    });
 }
 
-// cardmedium
-
-
+function redirectToAlbumPage(albumId) {
+    window.location.href = `album.html?id=${albumId}`;
+}
