@@ -8,6 +8,9 @@
     <!-- CSS BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- ICONE BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Spotify</title>
 
@@ -15,16 +18,11 @@
 
 <body>
     <div class="container-fluid">
-
-        <div class="row">
-
-            <div class="col-2 p-0 m-0">
-                <nav class="navbar bg-dark">
-                    <!--<div class="navbar-brand p-0  d-block mx-auto">
-                        <img src="data:image/png;base64,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"
-                            alt="spotify-bootstrap" class="img-fluid">
-                    </div>-->
-                    <div class="row border-bottom p-0 m-0">
+        <div class="row vh-100">
+            <!-- nav left -->
+            <div class="d-none d-sm-none d-md-none d-lg-block col-3 p-0 m-0 bg-dark">
+                <nav class="navbar p-0 m-0">
+                    <div class="row border-bottom p-0 m-0 bg-dark sticky-top z-1" style="height: 30vh;">
 
                         <a href="">
                             <svg role="img" height="24" width="24" aria-hidden="true"
@@ -84,7 +82,7 @@
 
                     </div>
 
-                    <div class="row p-0 m-0">
+                    <div class="row p-0 m-0 bg-dark overflow-auto " data-bs-spy="scroll" style="max-height: 50vh;">
                         <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
                         <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
                         <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
@@ -105,142 +103,401 @@
                         <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
                         <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
                         <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
+                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
+                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
+                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
+                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
+                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
+                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
+                        <a href="#" class="text-secondary">ciao</a>
                     </div>
                 </nav>
             </div>
-            <div class="col-8 p-0 m-0">
-
+            <!-- main -->
+            <div class="row row-cols-1 col-lg-7 p-0 m-0">
+                <main class="bg-dark vh-100 h-100 overflow-auto">
+                    <nav class="d-flex justify-content-between p-2">
+                        <div class="ms-2 mt-1">
+                            <a class="ancoraNavMain me-1" href="#"><svg id="navMainSvg"
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                                </svg></a>
+                            <a class="ancoraNavMain" href="#"><svg id="navMainSvg" xmlns="http://www.w3.org/2000/svg"
+                                    width="16" height="16" fill="currentColor" class="bi bi-chevron-right"
+                                    viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                </svg></a>
+                        </div>
+                        <div>
+                            <div class="dropdown">
+                                <button id="profiloMainNav" class="btn btn-black dropdown-toggle rounded-5"
+                                    type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img width="20px" src="./assets/imgs/profile/image02.png" alt="profilo">
+                                    <span class="text-white"> Profilo</span>
+                                </button>
+                                <ul class="dropdown-menu bg-dark">
+                                    <li><a class="dropdown-item" href="#"></a></li>
+                                    <li><a class="dropdown-item" href="#"></a></li>
+                                    <li><a class="dropdown-item" href="#"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <section id="cardHeader"
+                        class="d-sm-flex flex-sm-column d-md-flex flex-md-row justify-content-sm-center justify-content-md-start ms-sm-0 ms-md-4">
+                        <div class="mb-3 d-flex justify-content-center">
+                            <img class="justify-content-sm-center rounded-1 imgResponsiveHome"
+                                width="200px" src="..." alt="...">
+                        </div>
+                        <div class="mt-sm-0 ms-2 ms-md-3 mt-md-5 d-flex flex-column">
+                            <div>
+                                <h1 class="fs-6 text-white">ALBUM</h1>
+                            </div>
+                            <div  class="mb-3 justify-content-sm-center">
+                                <h1  class="fs-1 text-white">Pinguini Tattici Nucleari</h1>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <img class="rounded-5" width="10px" src="..."
+                                        alt="...">
+                                    <h1 class="fs-6 d-inline">Pinguini Tattici Nucleari</h1>
+                                </a>
+                            </div>
+                            <div class="my-3">
+                                <button type="button" class="btn btn-success text-dark">Play</button>
+                                <button type="button" class="btn btn-light">Salva</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="containerMainHome" class="pt-0 bg-dark">
+                        <div class="container-fluid px-4">
+                            <div class="row">
+                                <h3 class="text-white fs-6">Buonasera</h3>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-4 d-flex mb-2">
+                                    <div class="card mb-3 border-0">
+                                        <div id="card1" class="row g-0">
+                                            <div class="col-md-4">
+                                                <img src="./assets/imgs/search/image-11.jpg"
+                                                    class="img-fluid rounded-start" alt="logo 2">
+                                            </div>
+                                            <div class="col-md-8" style="background: #2C2C2C;">
+                                                <div class="card-body text-white">
+                                                    <h5 class="card-title">Card title</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4 d-flex mb-2">
+                                    <div id="card2" class="card mb-3 border-0">
+                                        <div class="row g-0">
+                                            <div class="col-md-4">
+                                                <img src="./assets/imgs/search/image-11.jpg"
+                                                    class="img-fluid rounded-start" alt="logo 2">
+                                            </div>
+                                            <div class="col-md-8" style="background: #2C2C2C;">
+                                                <div class="card-body text-white">
+                                                    <h5 class="card-title">Card title</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4 d-flex mb-2">
+                                    <div id="card3" class="card mb-3 border-0">
+                                        <div class="row g-0">
+                                            <div class="col-md-4">
+                                                <img src="./assets/imgs/search/image-11.jpg"
+                                                    class="img-fluid rounded-start" alt="logo 2">
+                                            </div>
+                                            <div class="col-md-8" style="background: #2C2C2C;">
+                                                <div class="card-body text-white">
+                                                    <h5 class="card-title">Card title</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4 d-flex mb-2">
+                                    <div id="card4" class="card mb-3 border-0">
+                                        <div class="row g-0">
+                                            <div class="col-md-4">
+                                                <img src="./assets/imgs/search/image-11.jpg"
+                                                    class="img-fluid rounded-start" alt="logo 2">
+                                            </div>
+                                            <div class="col-md-8" style="background: #2C2C2C;">
+                                                <div class="card-body text-white">
+                                                    <h5 class="card-title">Card title</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4 d-flex mb-2">
+                                    <div id="card5" class="card mb-3 border-0">
+                                        <div class="row g-0">
+                                            <div class="col-md-4">
+                                                <img src="./assets/imgs/search/image-11.jpg"
+                                                    class="img-fluid rounded-start" alt="logo 2">
+                                            </div>
+                                            <div class="col-md-8" style="background: #2C2C2C;">
+                                                <div class="card-body text-white">
+                                                    <h5 class="card-title">Card title</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4 d-flex mb-2">
+                                    <div id="card6" class="card mb-3 border-0">
+                                        <div class="row g-0">
+                                            <div class="col-md-4">
+                                                <img src="./assets/imgs/search/image-11.jpg"
+                                                    class="img-fluid rounded-start" alt="logo 2">
+                                            </div>
+                                            <div class="col-md-8" style="background: #2C2C2C;">
+                                                <div class="card-body text-white">
+                                                    <h5 class="card-title">Card title</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3 class="text-white fs-6">Altro di ciò che ti piace</h3>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-6 col-md-3 d-flex mb-2">
+                                    <div class="card border-0">
+                                        <img src="./assets/imgs/search/image-11.jpg" class="img-fluid rounded-start"
+                                            alt="logo 2">
+                                        <div class="card-body text-white" style="background: #2C2C2C;">
+                                            <p class="card-text">Card title</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3 d-flex mb-2">
+                                    <div class="card border-0">
+                                        <img src="./assets/imgs/search/image-11.jpg" class="img-fluid rounded-start"
+                                            alt="logo 2">
+                                        <div class="card-body text-white" style="background: #2C2C2C;">
+                                            <p class="card-text">Card title</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3 d-flex mb-2">
+                                    <div class="card border-0">
+                                        <img src="./assets/imgs/search/image-11.jpg" class="img-fluid rounded-start"
+                                            alt="logo 2">
+                                        <div class="card-body text-white" style="background: #2C2C2C;">
+                                            <p class="card-text">Card title</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3 d-flex mb-2">
+                                    <div class="card border-0">
+                                        <img src="./assets/imgs/search/image-11.jpg" class="img-fluid rounded-start"
+                                            alt="logo 2">
+                                        <div class="card-body text-white" style="background: #2C2C2C;">
+                                            <p class="card-text">Card title</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3 d-flex mb-2">
+                                    <div class="card border-0">
+                                        <img src="./assets/imgs/search/image-11.jpg" class="img-fluid rounded-start"
+                                            alt="logo 2">
+                                        <div class="card-body text-white" style="background: #2C2C2C;">
+                                            <p class="card-text">Card title</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3 d-flex mb-2">
+                                    <div class="card border-0">
+                                        <img src="./assets/imgs/search/image-11.jpg" class="img-fluid rounded-start"
+                                            alt="logo 2">
+                                        <div class="card-body text-white" style="background: #2C2C2C;">
+                                            <p class="card-text">Card title</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3 d-flex mb-2">
+                                    <div class="card border-0">
+                                        <img src="./assets/imgs/search/image-11.jpg" class="img-fluid rounded-start"
+                                            alt="logo 2">
+                                        <div class="card-body text-white" style="background: #2C2C2C;">
+                                            <p class="card-text">Card title</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3 d-flex mb-2">
+                                    <div class="card border-0">
+                                        <img src="./assets/imgs/search/image-11.jpg" class="img-fluid rounded-start"
+                                            alt="logo 2">
+                                        <div class="card-body text-white" style="background: #2C2C2C;">
+                                            <p class="card-text">Card title</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3 d-flex mb-2">
+                                    <div class="card border-0">
+                                        <img src="./assets/imgs/search/image-11.jpg" class="img-fluid rounded-start"
+                                            alt="logo 2">
+                                        <div class="card-body text-white" style="background: #2C2C2C;">
+                                            <p class="card-text">Card title</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3 d-flex mb-2">
+                                    <div class="card border-0">
+                                        <img src="./assets/imgs/search/image-11.jpg" class="img-fluid rounded-start"
+                                            alt="logo 2">
+                                        <div class="card-body text-white" style="background: #2C2C2C;">
+                                            <p class="card-text">Card title</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3 d-flex mb-2">
+                                    <div class="card border-0">
+                                        <img src="./assets/imgs/search/image-11.jpg" class="img-fluid rounded-start"
+                                            alt="logo 2">
+                                        <div class="card-body text-white" style="background: #2C2C2C;">
+                                            <p class="card-text">Card title</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3 d-flex mb-2">
+                                    <div class="card border-0">
+                                        <img src="./assets/imgs/search/image-11.jpg" class="img-fluid rounded-start"
+                                            alt="logo 2">
+                                        <div class="card-body text-white" style="background: #2C2C2C;">
+                                            <p class="card-text">Card title</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </main>
             </div>
-            <div class="col-2 p-0 m-0">
-                <nav class="navbar bg-dark">
-                    <!--<div class="navbar-brand p-0  d-block mx-auto">
-                        <img src="data:image/png;base64,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"
-                            alt="spotify-bootstrap" class="img-fluid">
-                    </div>-->
-                    <div class="row border-bottom p-0 m-0">
-
-                        <a href="">
-                            <svg role="img" height="24" width="24" aria-hidden="true"
-                                class="Svg-sc-ytk21e-0 uPxdw home-active-icon" viewBox="0 0 24 24"
-                                data-encore-id="icon">
-                                <path
-                                    d="M13.5 1.515a3 3 0 0 0-3 0L3 5.845a2 2 0 0 0-1 1.732V21a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6h4v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7.577a2 2 0 0 0-1-1.732l-7.5-4.33z">
-                                </path>
-                            </svg>
-                            <p class="d-inline ms-2">Home</p>
-                        </a>
-                        <a href="">
-                            <svg role="img" height="24" width="24" aria-hidden="true"
-                                class="Svg-sc-ytk21e-0 uPxdw search-icon" viewBox="0 0 24 24" data-encore-id="icon">
-                                <path
-                                    d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 1 0 1.414-1.414l-4.344-4.344a9.157 9.157 0 0 0 2.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z">
-                                </path>
-                            </svg>
-                            <p class="d-inline ms-2">Cerca</p>
-                        </a>
-                        <a class="mb-2" href="">
-                            <svg role="img" height="24" width="24" aria-hidden="true"
-                                class="Svg-sc-ytk21e-0 uPxdw collection-icon" viewBox="0 0 24 24" data-encore-id="icon">
-                                <path
-                                    d="M14.5 2.134a1 1 0 0 1 1 0l6 3.464a1 1 0 0 1 .5.866V21a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V3a1 1 0 0 1 .5-.866zM16 4.732V20h4V7.041l-4-2.309zM3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zm6 0a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1z">
-                                </path>
-                            </svg>
-                            <p class="d-inline ms-2">La tua libreria</p>
-                        </a>
-                        <a class="mt-2" href="">
-                            <svg role="img" height="12" width="12" aria-hidden="true" viewBox="0 0 16 16"
-                                data-encore-id="icon" class="Svg-sc-ytk21e-0 uPxdw">
-                                <path
-                                    d="M15.25 8a.75.75 0 0 1-.75.75H8.75v5.75a.75.75 0 0 1-1.5 0V8.75H1.5a.75.75 0 0 1 0-1.5h5.75V1.5a.75.75 0 0 1 1.5 0v5.75h5.75a.75.75 0 0 1 .75.75z">
-                                </path>
-                            </svg>
-                            <p class="d-inline ms-2">Crea playlist</p>
-                        </a>
-                        <a href="">
-                            <svg role="img" height="12" width="12" aria-hidden="true" viewBox="0 0 16 16"
-                                data-encore-id="icon" class="Svg-sc-ytk21e-0 uPxdw">
-                                <path
-                                    d="M15.724 4.22A4.313 4.313 0 0 0 12.192.814a4.269 4.269 0 0 0-3.622 1.13.837.837 0 0 1-1.14 0 4.272 4.272 0 0 0-6.21 5.855l5.916 7.05a1.128 1.128 0 0 0 1.727 0l5.916-7.05a4.228 4.228 0 0 0 .945-3.577z">
-                                </path>
-                            </svg>
-                            <p class="d-inline ms-2">Brani che ti piacciono</p>
-                        </a>
-                        <a href="">
-                            <svg role="img" height="12" width="12" aria-hidden="true" viewBox="0 0 16 16"
-                                data-encore-id="icon" class="Svg-sc-ytk21e-0 uPxdw">
-                                <path
-                                    d="M15.724 4.22A4.313 4.313 0 0 0 12.192.814a4.269 4.269 0 0 0-3.622 1.13.837.837 0 0 1-1.14 0 4.272 4.272 0 0 0-6.21 5.855l5.916 7.05a1.128 1.128 0 0 0 1.727 0l5.916-7.05a4.228 4.228 0 0 0 .945-3.577z">
-                                </path>
-                            </svg>
-                            <p class="d-inline ms-2">I tuoi episodi</p>
-                        </a>
-
+            <!-- nav right -->
+            <div class="d-none d-sm-none d-md-none d-lg-block col-2 bg-dark text-white">
+                <div class="row">
+                    <div class="col-6 p-0 m-0">
+                        <p>Attività amici</p>
                     </div>
-
-                    <div class="row p-0 m-0">
-                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
-                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
-                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
-                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
-                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
-                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
-                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
-                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
-                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
-                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
-                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
-                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
-                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
-                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
-                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
-                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
-                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
-                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
-                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
-                        <a href="#" class="text-secondary">Lorem ipsum dolor sit amet</a>
+                    <div class="col-6 p-0 m-0 d-flex justify-content-end">
+                        <i class="bi bi-person-plus-fill"></i>
                     </div>
-                </nav>
+                </div>
+                <div class="row">
+                    <div class="col-2 p-0 m-0">
+                        <img src="assets/imgs/profile/image02.png" alt="Profile" class="rounded-circle" width="32">
+                    </div>
+                    <div class="col-8 p-0 m-0">
+                        <p>Lorem ipsum dolor sit amet</p>
+                    </div>
+                    <div class="col-2 p-0 m-0">
+                        <p>4 ore</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2 p-0 m-0">
+                        <img src="assets/imgs/profile/image03.jpeg" alt="Profile" class="rounded-circle" width="32">
+                    </div>
+                    <div class="col-8 p-0 m-0">
+                        <p>Lorem ipsum dolor sit amet</p>
+                    </div>
+                    <div class="col-2 p-0 m-0">
+                        <p>8 ore</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2 p-0 m-0">
+                        <img src="assets/imgs/profile/image04.png" alt="Profile" class="rounded-circle" width="32">
+                    </div>
+                    <div class="col-8 p-0 m-0">
+                        <p>Lorem ipsum dolor sit amet</p>
+                    </div>
+                    <div class="col-2 p-0 m-0">
+                        <p>12 ore</p>
+                    </div>
+                </div>
             </div>
-
         </div>
-
-
     </div>
-
     <!-- Footer -->
-    <footer class="fixed-bottom bg-dark text-white p-0 m-0">
+    <footer class="fixed-bottom bg-dark text-white p-0 m-0 z-1">
         <div class="row d-flex">
 
             <div class="p-2 col-2 d-flex justify-content-start align-items-center">
-                <div class="ms-4">
-                    <img  width="50px" src="./assets/imgs/search/image-1.jpeg" alt="logo 1">
+                <div class="ms-4 playFooterLeft">
+                    <img width="50px" src="./assets/imgs/search/image-1.jpeg" alt="logo 1">
                 </div>
-                <div class="ms-4">
+                <div class="ms-4 playFooterLeft">
                     <h1 class="fs-6">Viva la vida</h1>
                     <h1 class="fs-6">Coldplay</h1>
                 </div>
-                <div class="ms-4">
-                        <svg id="svgCuore" xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-                        </svg>
+                <div class="ms-4 playFooterLeft">
+                    <svg id="svgCuore" xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                        class="bi bi-heart-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
                 </div>
             </div>
             <div class="p-2 col-8 d-flex flex-column justify-content-center align-items-center">
                 <div class="d-flex">
                     <div class="me-3 p-2">
-                        <svg id="playSvgFooter" role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon" class="Svg-sc-ytk21e-0 gQUQL"><path d="M13.151.922a.75.75 0 1 0-1.06 1.06L13.109 3H11.16a3.75 3.75 0 0 0-2.873 1.34l-6.173 7.356A2.25 2.25 0 0 1 .39 12.5H0V14h.391a3.75 3.75 0 0 0 2.873-1.34l6.173-7.356a2.25 2.25 0 0 1 1.724-.804h1.947l-1.017 1.018a.75.75 0 0 0 1.06 1.06L15.98 3.75 13.15.922zM.391 3.5H0V2h.391c1.109 0 2.16.49 2.873 1.34L4.89 5.277l-.979 1.167-1.796-2.14A2.25 2.25 0 0 0 .39 3.5z"></path><path d="m7.5 10.723.98-1.167.957 1.14a2.25 2.25 0 0 0 1.724.804h1.947l-1.017-1.018a.75.75 0 1 1 1.06-1.06l2.829 2.828-2.829 2.828a.75.75 0 1 1-1.06-1.06L13.109 13H11.16a3.75 3.75 0 0 1-2.873-1.34l-.787-.938z"></path></svg>
+                        <svg id="playSvgFooter" role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
+                            data-encore-id="icon" class="Svg-sc-ytk21e-0 gQUQL">
+                            <path
+                                d="M13.151.922a.75.75 0 1 0-1.06 1.06L13.109 3H11.16a3.75 3.75 0 0 0-2.873 1.34l-6.173 7.356A2.25 2.25 0 0 1 .39 12.5H0V14h.391a3.75 3.75 0 0 0 2.873-1.34l6.173-7.356a2.25 2.25 0 0 1 1.724-.804h1.947l-1.017 1.018a.75.75 0 0 0 1.06 1.06L15.98 3.75 13.15.922zM.391 3.5H0V2h.391c1.109 0 2.16.49 2.873 1.34L4.89 5.277l-.979 1.167-1.796-2.14A2.25 2.25 0 0 0 .39 3.5z">
+                            </path>
+                            <path
+                                d="m7.5 10.723.98-1.167.957 1.14a2.25 2.25 0 0 0 1.724.804h1.947l-1.017-1.018a.75.75 0 1 1 1.06-1.06l2.829 2.828-2.829 2.828a.75.75 0 1 1-1.06-1.06L13.109 13H11.16a3.75 3.75 0 0 1-2.873-1.34l-.787-.938z">
+                            </path>
+                        </svg>
                     </div>
                     <div class="me-3 p-2">
-                        <svg id="playSvgFooter" role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon" class="Svg-sc-ytk21e-0 gQUQL"><path d="M3.3 1a.7.7 0 0 1 .7.7v5.15l9.95-5.744a.7.7 0 0 1 1.05.606v12.575a.7.7 0 0 1-1.05.607L4 9.149V14.3a.7.7 0 0 1-.7.7H1.7a.7.7 0 0 1-.7-.7V1.7a.7.7 0 0 1 .7-.7h1.6z"></path></svg>
+                        <svg id="playSvgFooter" role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
+                            data-encore-id="icon" class="Svg-sc-ytk21e-0 gQUQL">
+                            <path
+                                d="M3.3 1a.7.7 0 0 1 .7.7v5.15l9.95-5.744a.7.7 0 0 1 1.05.606v12.575a.7.7 0 0 1-1.05.607L4 9.149V14.3a.7.7 0 0 1-.7.7H1.7a.7.7 0 0 1-.7-.7V1.7a.7.7 0 0 1 .7-.7h1.6z">
+                            </path>
+                        </svg>
                     </div>
                     <div id="play" class="p-2 me-3">
-                        <button id="containerPlay" aria-label="Play" data-testid="control-button-playpause" style="--button-size:32px;" aria-expanded="false"><svg role="img" height="20" width="20" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon" class="Svg-sc-ytk21e-0 gQUQL"><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg></button>
+                        <button id="containerPlay" aria-label="Play" data-testid="control-button-playpause"
+                            style="--button-size:32px;" aria-expanded="false"><svg role="img" height="20" width="20"
+                                aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon"
+                                class="Svg-sc-ytk21e-0 gQUQL">
+                                <path
+                                    d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z">
+                                </path>
+                            </svg></button>
                     </div>
                     <div class="me-3 p-2">
-                        <svg id="playSvgFooter" role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon" class="Svg-sc-ytk21e-0 gQUQL"><path d="M12.7 1a.7.7 0 0 0-.7.7v5.15L2.05 1.107A.7.7 0 0 0 1 1.712v12.575a.7.7 0 0 0 1.05.607L12 9.149V14.3a.7.7 0 0 0 .7.7h1.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-1.6z"></path></svg>
+                        <svg id="playSvgFooter" role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
+                            data-encore-id="icon" class="Svg-sc-ytk21e-0 gQUQL">
+                            <path
+                                d="M12.7 1a.7.7 0 0 0-.7.7v5.15L2.05 1.107A.7.7 0 0 0 1 1.712v12.575a.7.7 0 0 0 1.05.607L12 9.149V14.3a.7.7 0 0 0 .7.7h1.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-1.6z">
+                            </path>
+                        </svg>
                     </div>
                     <div class="p-2">
-                        <svg id="playSvgFooter" role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon" class="Svg-sc-ytk21e-0 gQUQL"><path d="M0 4.75A3.75 3.75 0 0 1 3.75 1h8.5A3.75 3.75 0 0 1 16 4.75v5a3.75 3.75 0 0 1-3.75 3.75H9.81l1.018 1.018a.75.75 0 1 1-1.06 1.06L6.939 12.75l2.829-2.828a.75.75 0 1 1 1.06 1.06L9.811 12h2.439a2.25 2.25 0 0 0 2.25-2.25v-5a2.25 2.25 0 0 0-2.25-2.25h-8.5A2.25 2.25 0 0 0 1.5 4.75v5A2.25 2.25 0 0 0 3.75 12H5v1.5H3.75A3.75 3.75 0 0 1 0 9.75v-5z"></path></svg>
+                        <svg id="playSvgFooter" role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
+                            data-encore-id="icon" class="Svg-sc-ytk21e-0 gQUQL">
+                            <path
+                                d="M0 4.75A3.75 3.75 0 0 1 3.75 1h8.5A3.75 3.75 0 0 1 16 4.75v5a3.75 3.75 0 0 1-3.75 3.75H9.81l1.018 1.018a.75.75 0 1 1-1.06 1.06L6.939 12.75l2.829-2.828a.75.75 0 1 1 1.06 1.06L9.811 12h2.439a2.25 2.25 0 0 0 2.25-2.25v-5a2.25 2.25 0 0 0-2.25-2.25h-8.5A2.25 2.25 0 0 0 1.5 4.75v5A2.25 2.25 0 0 0 3.75 12H5v1.5H3.75A3.75 3.75 0 0 1 0 9.75v-5z">
+                            </path>
+                        </svg>
                     </div>
                 </div>
                 <div>
@@ -250,28 +507,58 @@
                 </div>
             </div>
             <div class="pe-3 col-2 d-flex justify-content-end align-items-center">
-                <div class="me-2">
-                    <svg id="playSvgFooter" role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon" class="Svg-sc-ytk21e-0 gQUQL"><path d="M13.426 2.574a2.831 2.831 0 0 0-4.797 1.55l3.247 3.247a2.831 2.831 0 0 0 1.55-4.797zM10.5 8.118l-2.619-2.62A63303.13 63303.13 0 0 0 4.74 9.075L2.065 12.12a1.287 1.287 0 0 0 1.816 1.816l3.06-2.688 3.56-3.129zM7.12 4.094a4.331 4.331 0 1 1 4.786 4.786l-3.974 3.493-3.06 2.689a2.787 2.787 0 0 1-3.933-3.933l2.676-3.045 3.505-3.99z"></path></svg>
+                <div class="me-2 playFooterLeft">
+                    <svg id="playSvgFooter" role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
+                        data-encore-id="icon" class="Svg-sc-ytk21e-0 gQUQL">
+                        <path
+                            d="M13.426 2.574a2.831 2.831 0 0 0-4.797 1.55l3.247 3.247a2.831 2.831 0 0 0 1.55-4.797zM10.5 8.118l-2.619-2.62A63303.13 63303.13 0 0 0 4.74 9.075L2.065 12.12a1.287 1.287 0 0 0 1.816 1.816l3.06-2.688 3.56-3.129zM7.12 4.094a4.331 4.331 0 1 1 4.786 4.786l-3.974 3.493-3.06 2.689a2.787 2.787 0 0 1-3.933-3.933l2.676-3.045 3.505-3.99z">
+                        </path>
+                    </svg>
                 </div>
-                <div class="me-2">
-                    <svg id="playSvgFooter" role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon" class="Svg-sc-ytk21e-0 gQUQL"><path d="M15 15H1v-1.5h14V15zm0-4.5H1V9h14v1.5zm-14-7A2.5 2.5 0 0 1 3.5 1h9a2.5 2.5 0 0 1 0 5h-9A2.5 2.5 0 0 1 1 3.5zm2.5-1a1 1 0 0 0 0 2h9a1 1 0 1 0 0-2h-9z"></path></svg>
+                <div class="me-2 playFooterLeft">
+                    <svg id="playSvgFooter" role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
+                        data-encore-id="icon" class="Svg-sc-ytk21e-0 gQUQL">
+                        <path
+                            d="M15 15H1v-1.5h14V15zm0-4.5H1V9h14v1.5zm-14-7A2.5 2.5 0 0 1 3.5 1h9a2.5 2.5 0 0 1 0 5h-9A2.5 2.5 0 0 1 1 3.5zm2.5-1a1 1 0 0 0 0 2h9a1 1 0 1 0 0-2h-9z">
+                        </path>
+                    </svg>
                 </div>
-                <div class="me-2">
-                    <svg id="playSvgFooter" role="presentation" height="16" width="16" aria-hidden="true" class="Svg-sc-ytk21e-0 gQUQL" viewBox="0 0 16 16" data-encore-id="icon"><path d="M6 2.75C6 1.784 6.784 1 7.75 1h6.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15h-6.5A1.75 1.75 0 0 1 6 13.25V2.75zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h6.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25h-6.5zm-6 0a.25.25 0 0 0-.25.25v6.5c0 .138.112.25.25.25H4V11H1.75A1.75 1.75 0 0 1 0 9.25v-6.5C0 1.784.784 1 1.75 1H4v1.5H1.75zM4 15H2v-1.5h2V15z"></path><path d="M13 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm-1-5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path></svg>
+                <div class="me-2 playFooterLeft">
+                    <svg id="playSvgFooter" role="presentation" height="16" width="16" aria-hidden="true"
+                        class="Svg-sc-ytk21e-0 gQUQL" viewBox="0 0 16 16" data-encore-id="icon">
+                        <path
+                            d="M6 2.75C6 1.784 6.784 1 7.75 1h6.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15h-6.5A1.75 1.75 0 0 1 6 13.25V2.75zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h6.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25h-6.5zm-6 0a.25.25 0 0 0-.25.25v6.5c0 .138.112.25.25.25H4V11H1.75A1.75 1.75 0 0 1 0 9.25v-6.5C0 1.784.784 1 1.75 1H4v1.5H1.75zM4 15H2v-1.5h2V15z">
+                        </path>
+                        <path d="M13 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm-1-5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
+                    </svg>
                 </div>
-                <div class="me-2">
-                    <div id="current-time" class="time d-inline">
-                        <svg id="playSvgFooter" role="presentation" height="16" width="16" aria-hidden="true" aria-label="Volume alto" id="volume-icon" viewBox="0 0 16 16" data-encore-id="icon" class="Svg-sc-ytk21e-0 gQUQL"><path d="M9.741.85a.75.75 0 0 1 .375.65v13a.75.75 0 0 1-1.125.65l-6.925-4a3.642 3.642 0 0 1-1.33-4.967 3.639 3.639 0 0 1 1.33-1.332l6.925-4a.75.75 0 0 1 .75 0zm-6.924 5.3a2.139 2.139 0 0 0 0 3.7l5.8 3.35V2.8l-5.8 3.35zm8.683 4.29V5.56a2.75 2.75 0 0 1 0 4.88z"></path><path d="M11.5 13.614a5.752 5.752 0 0 0 0-11.228v1.55a4.252 4.252 0 0 1 0 8.127v1.55z"></path></svg>
+                <div class="me-2 playFooterLeft">
+                    <div id="current-time" class="">
+                        <svg id="playSvgFooter" role="presentation" height="16" width="16" aria-hidden="true"
+                            aria-label="Volume alto" id="volume-icon" viewBox="0 0 16 16" data-encore-id="icon"
+                            class="Svg-sc-ytk21e-0 gQUQL">
+                            <path
+                                d="M9.741.85a.75.75 0 0 1 .375.65v13a.75.75 0 0 1-1.125.65l-6.925-4a3.642 3.642 0 0 1-1.33-4.967 3.639 3.639 0 0 1 1.33-1.332l6.925-4a.75.75 0 0 1 .75 0zm-6.924 5.3a2.139 2.139 0 0 0 0 3.7l5.8 3.35V2.8l-5.8 3.35zm8.683 4.29V5.56a2.75 2.75 0 0 1 0 4.88z">
+                            </path>
+                            <path d="M11.5 13.614a5.752 5.752 0 0 0 0-11.228v1.55a4.252 4.252 0 0 1 0 8.127v1.55z">
+                            </path>
+                        </svg>
+                        <input type="range" id="seek-slider2" max="100" value="0">
                     </div>
-                    <input type="range" id="seek-slider2" max="100" value="0">
                 </div>
-                <div>
-                    <svg id="playSvgFooter" role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon" class="Svg-sc-ytk21e-0 gQUQL"><path d="M6.53 9.47a.75.75 0 0 1 0 1.06l-2.72 2.72h1.018a.75.75 0 0 1 0 1.5H1.25v-3.579a.75.75 0 0 1 1.5 0v1.018l2.72-2.72a.75.75 0 0 1 1.06 0zm2.94-2.94a.75.75 0 0 1 0-1.06l2.72-2.72h-1.018a.75.75 0 1 1 0-1.5h3.578v3.579a.75.75 0 0 1-1.5 0V3.81l-2.72 2.72a.75.75 0 0 1-1.06 0z"></path></svg>
+                <div class="playFooterLeft">
+                    <svg id="playSvgFooter" role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
+                        data-encore-id="icon" class="Svg-sc-ytk21e-0 gQUQL">
+                        <path
+                            d="M6.53 9.47a.75.75 0 0 1 0 1.06l-2.72 2.72h1.018a.75.75 0 0 1 0 1.5H1.25v-3.579a.75.75 0 0 1 1.5 0v1.018l2.72-2.72a.75.75 0 0 1 1.06 0zm2.94-2.94a.75.75 0 0 1 0-1.06l2.72-2.72h-1.018a.75.75 0 1 1 0-1.5h3.578v3.579a.75.75 0 0 1-1.5 0V3.81l-2.72 2.72a.75.75 0 0 1-1.06 0z">
+                        </path>
+                    </svg>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- Footer -->
+    <!-- JS -->
+    <script src="./js/script.js"></script>
     <!-- JS BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"

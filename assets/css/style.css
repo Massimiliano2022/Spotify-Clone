@@ -1,3 +1,10 @@
+a{
+    text-decoration: none;
+    color: white;
+}
+svg{
+    fill: white;
+}
 #svgCuore{
     fill: #191919;
 }
@@ -5,7 +12,7 @@
     fill: #fff;
 }
 #playSvgFooter{
-    fill: #ffffffc7;
+    fill: #ffffff9a;
 }
 #playSvgFooter:hover{
     fill: #fff;
@@ -25,6 +32,7 @@
     position: absolute;
     bottom: 7px;
     right: 7px;
+    fill: black;
 }
 #playFooter{
     vertical-align: middle;
@@ -41,10 +49,107 @@
     height: 2px;
     width: 70px;
 }
-/* #seek-slider:hover{
-    vertical-align: 20%;
-    background-color: green;
-    border-radius: 0px;
-    height: 2px;
-    width: 500px;
+.ancoraNavMain{
+    padding: 4px;
+    border-radius: 100%;
+}
+.ancoraNavMain:hover{
+    background-color: #191919;
+    padding: 4px;
+    border-radius: 100%;
+}
+#profiloMainNav:hover{
+    background-color: #191919;
+}
+#PlayMain{
+    border: none;
+    height: 35px;
+    width: 35px;
+    background-color: rgb(71, 236, 71);
+    border-radius: 100%;
+    position: relative;
+}
+#PlayMain svg{
+    position: absolute;
+    bottom: 7px;
+    right: 7px;
+    fill: black;
+}
+.titleMain{
+    font-size: 0.9em;
+}
+.paragraphMain{
+    font-size: 0.5em;
+}
+#containerMain2{
+    height: calc(100vh - 216px - 54px)
+}
+#containerMainHome{
+    /*height:70vh;*/
+    margin-bottom: 91.9px;
+}
+::-webkit-scrollbar{
+    background-color: #212529;
+}
+
+
+/* main{
+    background-image: url('../imgs/profile/pinguini-sfondo.jpg');
 } */
+
+/* media query */
+@media screen and (max-width: 1024px){
+    #seek-slider{
+        vertical-align: 20%;
+        border-radius: 0px;
+        height: 2px;
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 900px){
+    #seek-slider{
+        vertical-align: 20%;
+        border-radius: 0px;
+        height: 2px;
+        width: 200px;
+    }
+    #seek-slider2{
+        vertical-align: 15%;
+        border-radius: 0px;
+        height: 2px;
+        width: 50px;
+    }
+}
+
+@media screen and (max-width: 425px){ 
+    #ImgResponsive{
+        width: 350px;
+    }
+    .imgResponsiveHome{
+        width:150px;
+    }
+    #containerMain2{
+        height: calc(100vh - 475px - 54px)
+    }
+    .playFooterLeft{
+        display: none;
+    }
+    #seek-slider{
+        vertical-align: 20%;
+        border-radius: 0px;
+        height: 2px;
+        width: 100px;
+    }
+
+}
+
+#container1main{
+    position: relative;
+}
+
+#container2main{
+    position: absolute;
+    top: 150px;
+    left: 10px;
+}
