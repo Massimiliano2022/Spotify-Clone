@@ -22,6 +22,8 @@ async function creaCardHeader(params) {
 
 function assegnaHeader(album) {
     let cardDiv = document.getElementById("cardHeader");
+    cardDiv.innerHTML=''
+    
     cardDiv.innerHTML = `
     <div class="mb-3 d-flex justify-content-center">
         <img class="justify-content-sm-center rounded-1 imgResponsiveHome"
