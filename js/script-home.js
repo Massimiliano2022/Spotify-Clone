@@ -1,9 +1,10 @@
 const KEY_HEADER = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=pink-floyd';
 const KEY_CARD_SMALL = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=miles-davis';
-const KEY_CARD_MEDIUM = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=mina';
+const KEY_CARD_MEDIUM = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=a-tribe-called-quest';
 
 let objectAlbums = {};
 let arrayAlbumSmall = [];
+let arrayAlbumMedium= [];
 
 window.onload = async () => {
     creaCardHeader(KEY_HEADER);
@@ -61,7 +62,6 @@ function assegnaHeader(params) {
     </div>
     `;
 }
-
 async function creaCardSmall(params) {
 
     try {
@@ -121,4 +121,55 @@ function assegnaCardSmall(params) {
         cardDiv.appendChild(card);
     });
 }
+async function creaCardMedium(params) {
 
+    try {
+        const response = await fetch(params, {
+        });
+
+        const albums = await response.json();
+
+        console.log(albums);
+
+        objectAlbums = { ...albums };
+
+        for (i = 0; i < 12; i++) {
+
+            let numRandom = Math.floor(Math.random() * 24);
+
+            let album = objectAlbums.data[numRandom];
+
+            arrayAlbumMedium.push(album);
+
+        }
+
+        assegnaCardMedium(arrayAlbumMedium);
+
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+function assegnaCardMedium(params) {
+
+    console.log(params);
+
+    let cardDiv = document.getElementById("cardMedium");
+
+    cardDiv.innerHTML = "";
+
+    params.forEach((param) => {
+
+        let card = document.createElement("div");
+        card.classList.add("col-6", "col-md-3","d-flex", "mb-2");
+        card.innerHTML = `
+        <div class="card border-0">
+            <img src="${param.album.cover_big}" class="img-fluid rounded-start" alt="${param.album.title}" width="200px">
+            <div class="card-body text-white" style="background: #2C2C2C;">
+                <p class="card-text">${param.album.title}</p>
+            </div>
+        </div>
+        `;
+        cardDiv.appendChild(card);
+    });
+}
