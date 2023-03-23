@@ -1,7 +1,34 @@
 const albumHeader = 'https://striveschool-api.herokuapp.com/api/deezer/album/366045987';
 
+const cardMedium1 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=queen'
+const cardMedium2 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=lazza'
+const cardMedium3 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=ultimo'
+const cardMedium4 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=michaeljackson'
+const cardMedium5 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=ac/ds'
+const cardMedium6 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=oasis'
+const cardMedium7 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=blackeyedpeas'
+const cardMedium8 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=theweekend'
+const cardMedium9 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=badbunny'
+const cardMedium10 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=harrystyle'
+const cardMedium11 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=geolier'
+const cardMedium12 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=tananai'
+const cardMedium13 = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=gue'
+
 window.onload = async () => {
     creaCardHeader(albumHeader);
+    creaCardMain1(cardMedium1)
+    creaCardMain2(cardMedium2)
+    creaCardMain3(cardMedium3)
+    creaCardMain4(cardMedium4)
+    creaCardMain5(cardMedium5)
+    creaCardMain6(cardMedium6)
+    creaCardMain7(cardMedium7)
+    creaCardMain8(cardMedium8)
+    creaCardMain9(cardMedium9)
+    creaCardMain10(cardMedium10)
+    creaCardMain11()
+    creaCardMain12()
+    creaCardMain13()
 }
 
 async function creaCardHeader(params) {
@@ -23,7 +50,7 @@ async function creaCardHeader(params) {
 function assegnaHeader(album) {
     let cardDiv = document.getElementById("cardHeader");
     cardDiv.innerHTML=''
-    
+
     cardDiv.innerHTML = `
     <div class="mb-3 d-flex justify-content-center">
         <img class="justify-content-sm-center rounded-1 imgResponsiveHome"
@@ -50,3 +77,7 @@ function assegnaHeader(album) {
     </div>
     `;
 }
+
+// cardmedium
+
+
