@@ -143,3 +143,13 @@ svg{
     }
 
 }
+
+#container1main{
+    position: relative;
+}
+
+#container2main{
+    position: absolute;
+    top: 150px;
+    left: 10px;
+}
