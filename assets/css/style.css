@@ -126,7 +126,7 @@ svg{
     #ImgResponsive{
         width: 350px;
     }
-    #ImgResponsiveHome{
+    .imgResponsiveHome{
         width:150px;
     }
     #containerMain2{
