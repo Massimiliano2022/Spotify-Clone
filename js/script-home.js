@@ -10,6 +10,9 @@ window.onload = async () => {
     creaCardHeader(KEY_HEADER);
     creaCardSmall(KEY_CARD_SMALL);
     creaCardMedium(KEY_CARD_MEDIUM);
+
+
+
 }
 
 async function creaCardHeader(params) {
@@ -33,26 +36,26 @@ async function creaCardHeader(params) {
         console.log(error);
     }
 }
-function assegnaHeader(params) {
+function assegnaHeader(param) {
 
     let cardDiv = document.getElementById("cardHeader");
     cardDiv.innerHTML = "";
     cardDiv.innerHTML = `
     <div class="mb-3 d-flex justify-content-center">
-        <img class="justify-content-sm-center rounded-1 imgResponsiveHome" src="${params.album.cover_medium}" alt="${params.album.title}">
+        <img class="justify-content-sm-center rounded-1 imgResponsiveHome" src="${param.album.cover_medium}" alt="${param.album.title}">
     </div>
     <div class="mt-sm-0 ms-2 ms-md-3 mt-md-5 d-flex flex-column">
         <div>
             <h1 class="fs-6 text-white">ALBUM</h1>
         </div>
         <div  class="mb-3 justify-content-sm-center">
-            <h1  class="fs-1 text-white">${params.album.title}</h1>
+            <h1  class="fs-1 text-white">${param.album.title}</h1>
         </div>
         <div>
             <a href="#">
-                <img class="rounded-5" width="25px" src="${params.artist.picture_medium}"
-                alt="${params.artist.name}">
-                <h1 class="fs-6 d-inline">${params.artist.name}</h1>
+                <img class="rounded-5" width="25px" src="${param.artist.picture_medium}"
+                alt="${param.artist.name}">
+                <h1 class="fs-6 d-inline">${param.artist.name}</h1>
             </a>
         </div>
         <div class="my-3">
@@ -61,6 +64,9 @@ function assegnaHeader(params) {
         </div>
     </div>
     `;
+    cardDiv.addEventListener("click", () => {
+        redirectToAlbumPage(param.album.id);
+    });
 }
 async function creaCardSmall(params) {
 
@@ -118,6 +124,11 @@ function assegnaCardSmall(params) {
             </div>
         </div>
         `;
+
+        card.addEventListener("click", () => {
+            redirectToAlbumPage(param.album.id);
+        });
+
         cardDiv.appendChild(card);
     });
 }
@@ -166,10 +177,19 @@ function assegnaCardMedium(params) {
         <div class="card border-0">
             <img src="${param.album.cover_big}" class="img-fluid rounded-start" alt="${param.album.title}" width="200px">
             <div class="card-body text-white" style="background: #2C2C2C;">
-                <p class="card-text">${param.album.title}</p>
+                <p class="card-text text-truncate">${param.album.title}</p>
             </div>
         </div>
         `;
+
+        card.addEventListener("click", () => {
+            redirectToAlbumPage(param.album.id);
+        });
+
         cardDiv.appendChild(card);
     });
+}
+
+function redirectToAlbumPage(albumId) {
+    window.location.href = `album.html?id=${albumId}`;
 }
