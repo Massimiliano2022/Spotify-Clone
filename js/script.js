@@ -1,11 +1,26 @@
-const KEY_HEADER = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=pink-floyd';
+const KEY_HEADER = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${randomKeyHeader}`;
 const KEY_CARD_SMALL = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=miles-davis';
 const KEY_CARD_MEDIUM = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=a-tribe-called-quest';
 
 let objectAlbums = {};
 let arrayAlbumSmall = [];
 let arrayAlbumMedium= [];
+let randomKeyHeader = RandomHeader()
+let arrayNameArtist=['lazza',
+'shiva',
+'ultimo',
+'tananai',
+'queen',
+'ac/dc',
+'pinkfloid',
+'negrita'
+]
 
+function RandomHeader() {
+    let randomKey = Math.floor(Math.random()*8)
+    return arrayNameArtist[randomKey];
+}
+console.log(randomKeyHeader);
 
 window.onload = async () => {
     creaCardHeader(KEY_HEADER);
