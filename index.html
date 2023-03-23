@@ -11,7 +11,7 @@
     <!-- ICONE BOOTSTRAP -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <!-- CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Spotify</title>
 
 </head>
@@ -149,21 +149,20 @@
                     <section id="cardHeader"
                         class="d-sm-flex flex-sm-column d-md-flex flex-md-row justify-content-sm-center justify-content-md-start ms-sm-0 ms-md-4">
                         <div class="mb-3 d-flex justify-content-center text-dark">
-                            <img class="justify-content-sm-center rounded-1 imgResponsiveHome"
-                                width="200px" src="..." alt="...">
+                            <img class="justify-content-sm-center rounded-1 imgResponsiveHome" width="200px" src="./assets/imgs/search/image-11.jpg"
+                                alt="Cover">
                         </div>
                         <div class="mt-sm-0 ms-2 ms-md-3 mt-md-5 d-flex flex-column text-dark">
                             <div class="">
-                                <h1 class="fs-6 text-dark">ALBUM</h1>
+                                <h1 class="fs-6">ALBUM</h1>
                             </div>
-                            <div  class="mb-3 justify-content-sm-center">
-                                <h1  class="fs-1 text-dark">Pinguini Tattici Nucleari</h1>
+                            <div class="mb-3 justify-content-sm-center">
+                                <h1 class="fs-1">Pinguini Tattici Nucleari</h1>
                             </div>
-                            <div class="text-dark">
+                            <div>
                                 <a href="#">
-                                    <img class="rounded-5" width="10px" src="..."
-                                        alt="...">
-                                    <h1 class="fs-6 d-inline text-dark">Pinguini Tattici Nucleari</h1>
+                                    <img class="rounded-5" width="25px" src="assets/imgs/profile/image02.png" alt="Artist">
+                                    <h1 class="fs-6 d-inline">Pinguini Tattici Nucleari</h1>
                                 </a>
                             </div>
                             <div class="my-3">
@@ -177,24 +176,9 @@
                             <div class="row">
                                 <h3 class="text-white fs-6">Buonasera</h3>
                             </div>
-                            <div class="row g-3">
+                            <div id="cardSmall" class="row g-3">
                                 <div class="col-4 d-flex mb-2">
                                     <div class="card mb-3 border-0">
-                                        <div id="card1" class="row g-0">
-                                            <div class="col-md-4">
-                                                <img src="./assets/imgs/search/image-11.jpg"
-                                                    class="img-fluid rounded-start" alt="logo 2">
-                                            </div>
-                                            <div class="col-md-8" style="background: #2C2C2C;">
-                                                <div class="card-body text-white">
-                                                    <h5 class="card-title">Card title</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-4 d-flex mb-2">
-                                    <div id="card2" class="card mb-3 border-0">
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <img src="./assets/imgs/search/image-11.jpg"
@@ -209,7 +193,7 @@
                                     </div>
                                 </div>
                                 <div class="col-4 d-flex mb-2">
-                                    <div id="card3" class="card mb-3 border-0">
+                                    <div class="card mb-3 border-0">
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <img src="./assets/imgs/search/image-11.jpg"
@@ -224,7 +208,7 @@
                                     </div>
                                 </div>
                                 <div class="col-4 d-flex mb-2">
-                                    <div id="card4" class="card mb-3 border-0">
+                                    <div class="card mb-3 border-0">
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <img src="./assets/imgs/search/image-11.jpg"
@@ -239,7 +223,7 @@
                                     </div>
                                 </div>
                                 <div class="col-4 d-flex mb-2">
-                                    <div id="card5" class="card mb-3 border-0">
+                                    <div class="card mb-3 border-0">
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <img src="./assets/imgs/search/image-11.jpg"
@@ -254,7 +238,22 @@
                                     </div>
                                 </div>
                                 <div class="col-4 d-flex mb-2">
-                                    <div id="card6" class="card mb-3 border-0">
+                                    <div class="card mb-3 border-0">
+                                        <div class="row g-0">
+                                            <div class="col-md-4">
+                                                <img src="./assets/imgs/search/image-11.jpg"
+                                                    class="img-fluid rounded-start" alt="logo 2">
+                                            </div>
+                                            <div class="col-md-8" style="background: #2C2C2C;">
+                                                <div class="card-body text-white">
+                                                    <h5 class="card-title">Card title</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4 d-flex mb-2">
+                                    <div class="card mb-3 border-0">
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <img src="./assets/imgs/search/image-11.jpg"
@@ -272,7 +271,7 @@
                             <div class="row">
                                 <h3 class="text-white fs-6">Altro di ciò che ti piace</h3>
                             </div>
-                            <div class="row g-3">
+                            <div id="cardMedium" class="row g-3">
                                 <div class="col-6 col-md-3 d-flex mb-2">
                                     <div class="card border-0">
                                         <img src="./assets/imgs/search/image-11.jpg" class="img-fluid rounded-start"
@@ -558,7 +557,7 @@
         </div>
     </footer>
     <!-- JS -->
-    <script src="./js/script.js"></script>
+    <script src="js/script-home.js"></script>
     <!-- JS BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
