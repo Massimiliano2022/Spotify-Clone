@@ -10,9 +10,6 @@ window.onload = async () => {
     creaCardHeader(KEY_HEADER);
     creaCardSmall(KEY_CARD_SMALL);
     creaCardMedium(KEY_CARD_MEDIUM);
-
-
-
 }
 
 async function creaCardHeader(params) {
