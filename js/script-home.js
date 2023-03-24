@@ -7,7 +7,20 @@ let arrayNameArtist=['lazza',
 'queen',
 'ac/dc',
 'pinkfloid',
-'negrita'
+'negrita',
+'dualipa',
+'greenday',
+'mileycyurus',
+'shakira',
+'theweekend',
+'samsmith',
+'davidguetta',
+'imaginedragons',
+
+
+
+
+
 ]
 
 let objectAlbums = {};
