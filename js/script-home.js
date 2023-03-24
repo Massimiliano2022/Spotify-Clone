@@ -77,7 +77,7 @@ function assegnaHeader(param) {
             <a href="#">
                 <img class="rounded-5" width="25px" src="${param.artist.picture_medium}"
                 alt="${param.artist.name}">
-                <h1 class="fs-6 d-inline">${param.artist.name}</h1>
+                <h1 id="NameOfArtist" class="fs-6 d-inline">${param.artist.name}</h1>
             </a>
         </div>
         <div class="my-3">
@@ -86,8 +86,15 @@ function assegnaHeader(param) {
         </div>
     </div>
     `;
+    
+    let nameOfArtist = document.getElementById('NameOfArtist')
+
     cardDiv.addEventListener("click", () => {
         redirectToAlbumPage(param.album.id);
+    });
+
+    nameOfArtist.addEventListener('click', () => {
+        redirectToArtistPage(param.artist.id)
     });
 }
 async function creaCardSmall(params) {
