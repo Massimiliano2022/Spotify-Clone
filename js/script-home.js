@@ -1,4 +1,5 @@
 let randomKey;
+let artistName;
 let arrayNameArtist=['lazza',
 'shiva',
 'ultimo',
@@ -9,28 +10,24 @@ let arrayNameArtist=['lazza',
 'negrita'
 ]
 
-function RandomHeader() {
-    randomKey = Math.floor(Math.random()*8)
-    return arrayNameArtist[randomKey];
+function RandomArtist() {
+    randomIndex = Math.floor(Math.random() * arrayNameArtist.length);
+    artistName = arrayNameArtist[randomIndex];
+    arrayNameArtist.splice(randomIndex, 1);
+    return artistName;
 }
 
-let randomKeyHeader = RandomHeader()
+let randomArtistHeader = RandomArtist();
+let randomArtistSmall = RandomArtist();
+let randomArtistMedium = RandomArtist();
 
-const KEY_HEADER = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${randomKeyHeader}`;
-
-delete arrayNameArtist[randomKey];
-
-
-console.log(arrayNameArtist);
-
-const KEY_CARD_SMALL = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=miles-davis';
-const KEY_CARD_MEDIUM = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=a-tribe-called-quest';
+const KEY_HEADER = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${randomArtistHeader}`;
+const KEY_CARD_SMALL = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${randomArtistSmall}`;
+const KEY_CARD_MEDIUM = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${randomArtistMedium}`;
 
 let objectAlbums = {};
 let arrayAlbumSmall = [];
 let arrayAlbumMedium= [];
-
-console.log(randomKeyHeader);
 
 window.onload = async () => {
     creaCardHeader(KEY_HEADER);
