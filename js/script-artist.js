@@ -54,14 +54,16 @@ async function ottieniTracklist(params) {
     }
 
     function createSongList(param){
+        let cardListSong = document.getElementById('cardListSong')
+
+        cardListSong.innerHTML = '';
 
         param.data.forEach(song => {
             
-            let cardListSong = document.getElementById('cardListSong')
+            let cardDivSong = document.createElement('div')
+            cardDivSong.classList.add('col-lg-7','col-sm-12')
 
-            cardListSong.innerHTML = '';
-
-            cardListSong.innerHTML = 
+            cardDivSong.innerHTML = 
             `<h2 class="text-white">Popolari</h2>
             <div class="row d-flex align-items-center my-4">
                 <div class="col-6">
@@ -84,6 +86,7 @@ async function ottieniTracklist(params) {
                 </div>
             </div> `
         });
+        cardListSong.appendChild(cardDivSong);
     }
 }
 
