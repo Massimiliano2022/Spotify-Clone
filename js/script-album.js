@@ -5,9 +5,9 @@ console.log("SELECTED ID: ", selectedId);
 const KEY='https://striveschool-api.herokuapp.com/api/deezer/album/'+selectedId;
 
 window.onload = async () => {
-    creaCardHeader(KEY);
+    ottieniAlbum(KEY);
 }
-async function creaCardHeader(params) {
+async function ottieniAlbum(params) {
 
     try {
         const response = await fetch(params, {
@@ -17,12 +17,13 @@ async function creaCardHeader(params) {
 
         console.log(album);
 
-        assegnaHeader(album);
+        creaCardHeader(album);
+        creaSongSection(album.tracks);
     } catch (error) {
         console.log(error);
     }
 }
-function assegnaHeader(param) {
+function creaCardHeader(param) {
 
     let cardDiv = document.getElementById("cardHeader");
     cardDiv.innerHTML = "";
@@ -52,5 +53,38 @@ function assegnaHeader(param) {
     `;
     cardDiv.addEventListener("click", () => {
         redirectToAlbumPage(param.album.id);
+    });
+}
+function creaSongSection(album) {
+    console.log(album);
+
+    let cardDiv = document.getElementById("albumSongs");
+
+    cardDiv.innerHTML = "";
+
+    album.data.forEach((song) => {
+
+        console.log(song);
+
+        let cardSong = document.createElement("div");
+        cardSong.classList.add("d-flex", "justify-content-between", "mt-4");
+        cardSong.innerHTML = `
+            <div class="d-flex">
+                <p class="text-white me-2 mt-1">1</p>
+                <div class="text-white">
+                    <h1 class="titleMain">${song.title}</h1>
+                    <p class="paragraphMain">Pinguini Tattici Nucleari</p>
+                </div>
+            </div>
+            <div>
+                <p class="text-white fs-6">254.987</p>
+            </div>
+            <div>
+                <p class="text-white"> 2:20</p>
+            </div>
+        `;
+
+        cardDiv.appendChild(cardSong);
+
     });
 }
