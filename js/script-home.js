@@ -1,5 +1,4 @@
 let randomKey;
-let artistName;
 let arrayNameArtist=['lazza',
 'shiva',
 'ultimo',
@@ -10,26 +9,28 @@ let arrayNameArtist=['lazza',
 'negrita'
 ]
 
+function RandomHeader() {
+    randomKey = Math.floor(Math.random()*8)
+    return arrayNameArtist[randomKey];
+}
+
+let randomKeyHeader = RandomHeader()
+
+const KEY_HEADER = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${randomKeyHeader}`;
+
+delete arrayNameArtist[randomKey];
+
+
+console.log(arrayNameArtist);
+
+const KEY_CARD_SMALL = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=miles-davis';
+const KEY_CARD_MEDIUM = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=a-tribe-called-quest';
+
 let objectAlbums = {};
 let arrayAlbumSmall = [];
 let arrayAlbumMedium= [];
 
-function RandomArtist() {
-    randomIndex = Math.floor(Math.random() * arrayNameArtist.length);
-    artistName = arrayNameArtist[randomIndex];
-    arrayNameArtist.splice(randomIndex, 1);
-    return artistName;
-}
-
-let randomArtistHeader = RandomArtist();
-let randomArtistSmall = RandomArtist();
-let randomArtistMedium = RandomArtist();
-
-const KEY_HEADER = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${randomArtistHeader}`;
-const KEY_CARD_SMALL = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${randomArtistSmall}`;
-const KEY_CARD_MEDIUM = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${randomArtistMedium}`;
-
-
+console.log(randomKeyHeader);
 
 window.onload = async () => {
     creaCardHeader(KEY_HEADER);
@@ -64,7 +65,7 @@ function assegnaHeader(param) {
     cardDiv.innerHTML = "";
     cardDiv.innerHTML = `
     <div class="mb-3 d-flex justify-content-center">
-        <img class="justify-content-sm-center rounded-1 imgResponsiveHome" src="${param.album.cover_medium}" alt="${param.album.title}">
+        <img id="nameOfAlbum" class="justify-content-sm-center rounded-1 imgResponsiveHome" src="${param.album.cover_medium}" alt="${param.album.title}">
     </div>
     <div class="mt-sm-0 ms-2 ms-md-3 mt-md-5 d-flex flex-column">
         <div>
@@ -77,19 +78,19 @@ function assegnaHeader(param) {
             <a href="#">
                 <img class="rounded-5" width="25px" src="${param.artist.picture_medium}"
                 alt="${param.artist.name}">
-                <h1 id="NameOfArtist" class="fs-6 d-inline">${param.artist.name}</h1>
+                <h1 id="nameOfArtist" class="fs-6 d-inline">${param.artist.name}</h1>
             </a>
         </div>
         <div class="my-3">
             <button type="button" class="btn btn-success text-dark">Play</button>
             <button type="button" class="btn btn-light">Salva</button>
         </div>
-    </div>
-    `;
-    
-    let nameOfArtist = document.getElementById('NameOfArtist')
+    </div>`;
 
-    cardDiv.addEventListener("click", () => {
+    let nameOfAlbum = document.getElementById('nameOfAlbum')
+    let nameOfArtist = document.getElementById('nameOfArtist')
+
+    nameOfAlbum.addEventListener("click", () => {
         redirectToAlbumPage(param.album.id);
     });
 
@@ -221,4 +222,7 @@ function assegnaCardMedium(params) {
 
 function redirectToAlbumPage(albumId) {
     window.location.href = `album.html?id=${albumId}`;
+}
+function redirectToArtistPage(artistId){
+    window.location.href = `artist.html?id=${artistId}`
 }
