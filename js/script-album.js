@@ -61,8 +61,7 @@ function creaSongSection(album) {
 
     album.data.forEach((song) => {
         i++;
-        console.log(i);
-
+        
         let cardSong = document.createElement("div");
         cardSong.classList.add("d-flex", "justify-content-between", "mt-4");
         cardSong.innerHTML = `

@@ -52,42 +52,39 @@ async function ottieniTracklist(params) {
     }catch(err){
         console.log(err);
     }
-
-    function createSongList(param){
+}
+function createSongList(param){
+        let i=0;
         let cardListSong = document.getElementById('cardListSong')
 
         cardListSong.innerHTML = '';
 
         param.data.forEach(song => {
             
+            i++;
+
             let cardDivSong = document.createElement('div')
             cardDivSong.classList.add('col-lg-7','col-sm-12')
 
-            cardDivSong.innerHTML = 
-            `<h2 class="text-white">Popolari</h2>
-            <div class="row d-flex align-items-center my-4">
-                <div class="col-6">
-                    <div class="d-flex align-items-center">
-                        <p class="text-white mb-0">1</p>
-                        <img src="${song.album.cover_small}" alt="Cover1" width="40px"
-                            class="mx-2">
-                        <p class="text-white mb-0">${song.title}</p>
-                    </div>
+            cardDivSong.innerHTML = `
+            <div class="col-6">
+                <div class="d-flex align-items-center">
+                    <p class="text-white mb-0">${i}</p>
+                    <img src="${song.album.cover_small}" alt="${song.title}" width="40px" class="mx-2">
+                    <p class="text-white mb-0">${song.title}</p>
                 </div>
-                <div class="col-4">
-                    <div>
-                        <p class="text-white fs-6 mb-0">${song.rank}</p>
-                    </div>
+            </div>
+            <div class="col-4">
+                <div>
+                    <p class="text-white fs-6 mb-0">${song.rank}</p>
                 </div>
-                <div class="col-2">
-                    <div>
-                        <p class="text-white mb-0">${Math.floor(song.duration / 60)+ ':' + song.duration % 60}</p>
-                    </div>
+            </div>
+            <div class="col-2">
+                <div>
+                    <p class="text-white mb-0">${Math.floor(song.duration / 60)+ ':' + song.duration % 60}</p>
                 </div>
-            </div> `
+            </div>
+            `
+            cardListSong.appendChild(cardDivSong);
         });
-        cardListSong.appendChild(cardDivSong);
     }
-}
-
-// ${(song.duration / 60).toFixed(2)
