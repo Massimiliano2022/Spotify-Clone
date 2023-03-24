@@ -75,7 +75,7 @@ function creaSongSection(album) {
                 <p class="text-white fs-6">${song.rank}</p>
             </div>
             <div class="col-2">
-                <p class="text-white">${song.duration}</p>
+                <p class="text-white">${Math.floor(song.duration / 60)+ ':' + song.duration % 60}</p>
             </div>
             `;
         cardDiv.appendChild(cardSong);
