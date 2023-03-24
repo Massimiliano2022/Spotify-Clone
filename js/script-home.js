@@ -10,6 +10,10 @@ let arrayNameArtist=['lazza',
 'negrita'
 ]
 
+let objectAlbums = {};
+let arrayAlbumSmall = [];
+let arrayAlbumMedium= [];
+
 function RandomArtist() {
     randomIndex = Math.floor(Math.random() * arrayNameArtist.length);
     artistName = arrayNameArtist[randomIndex];
@@ -25,9 +29,7 @@ const KEY_HEADER = `https://striveschool-api.herokuapp.com/api/deezer/search?q=$
 const KEY_CARD_SMALL = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${randomArtistSmall}`;
 const KEY_CARD_MEDIUM = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${randomArtistMedium}`;
 
-let objectAlbums = {};
-let arrayAlbumSmall = [];
-let arrayAlbumMedium= [];
+
 
 window.onload = async () => {
     creaCardHeader(KEY_HEADER);
