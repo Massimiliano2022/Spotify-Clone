@@ -79,7 +79,7 @@ async function ottieniTracklist(params) {
                 </div>
                 <div class="col-2">
                     <div>
-                        <p class="text-white mb-0">${(song.duration / 60).toFixed(2)}</p>
+                        <p class="text-white mb-0">${Math.floor(song.duration / 60)+ ':' + song.duration % 60}</p>
                     </div>
                 </div>
             </div> `
@@ -87,3 +87,4 @@ async function ottieniTracklist(params) {
     }
 }
 
+// ${(song.duration / 60).toFixed(2)
