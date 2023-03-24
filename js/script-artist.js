@@ -64,7 +64,7 @@ function createSongList(param){
             i++;
 
             let cardDivSong = document.createElement('div')
-            cardDivSong.classList.add('col-lg-7','col-sm-12')
+            cardDivSong.classList.add('row','d-flex','align-items-center', 'my-4')
 
             cardDivSong.innerHTML = `
             <div class="col-6">
