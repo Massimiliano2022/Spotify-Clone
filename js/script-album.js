@@ -15,8 +15,6 @@ async function ottieniAlbum(params) {
 
         const album = await response.json();
 
-        console.log(album);
-
         creaCardHeader(album);
         creaSongSection(album.tracks);
     } catch (error) {
@@ -56,34 +54,30 @@ function creaCardHeader(param) {
     });
 }
 function creaSongSection(album) {
-    console.log(album);
-
+    let i=0;
     let cardDiv = document.getElementById("albumSongs");
 
     cardDiv.innerHTML = "";
 
     album.data.forEach((song) => {
-
-        console.log(song);
+        i++;
+        console.log(i);
 
         let cardSong = document.createElement("div");
         cardSong.classList.add("d-flex", "justify-content-between", "mt-4");
         cardSong.innerHTML = `
-            <div class="d-flex">
-                <p class="text-white me-2 mt-1">1</p>
-                <div class="text-white">
-                    <h1 class="titleMain">${song.title}</h1>
-                    <p class="paragraphMain">Pinguini Tattici Nucleari</p>
-                </div>
+            <div class="col-5">
+                <p class="d-inline">${i}</p>
+                <h1 class="d-inline titleMain">${song.title}</h1>
+                <p class="paragraphMain">${song.artist.name}</p>
             </div>
-            <div>
-                <p class="text-white fs-6">254.987</p>
+            <div class="col-5">
+                <p class="text-white fs-6">${song.rank}</p>
             </div>
-            <div>
-                <p class="text-white"> 2:20</p>
+            <div class="col-2">
+                <p class="text-white">${song.duration}</p>
             </div>
-        `;
-
+            `;
         cardDiv.appendChild(cardSong);
 
     });
