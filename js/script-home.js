@@ -11,17 +11,16 @@ let arrayNameArtist=['lazza',
 'dualipa',
 'greenday',
 'mileycyurus',
-'shakira',
-'theweekend',
-'samsmith',
-'davidguetta',
 'imaginedragons',
-
-
-
-
-
+'badbunny',
+'michaeljackson',
+'whitneyhouston',
+'giorgia',
+'fabrifibra',
+'jovanotti'
 ]
+
+console.log(arrayNameArtist.length);
 
 let objectAlbums = {};
 let arrayAlbumSmall = [];
